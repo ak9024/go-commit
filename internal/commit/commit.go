@@ -43,12 +43,7 @@ func Commit(cmd *cobra.Command, args []string) {
 
 	if commit != "" && strings.EqualFold(commit, "y") {
 		gitCommit := fmt.Sprintf(`git commit -m "%s"`, commitMessage)
-		execCommit, err := utils.ExecCommand(gitCommit)
-		if err != nil {
-			fmt.Println(err)
-			os.Exit(0)
-		}
-
+		execCommit, _ := utils.ExecCommand(gitCommit)
 		fmt.Println(execCommit)
 	} else {
 		os.Exit(0)
