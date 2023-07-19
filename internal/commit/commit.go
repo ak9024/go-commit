@@ -4,9 +4,11 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/ak9024/go-commit/pkg/chatgpt"
 	"github.com/ak9024/go-commit/utils"
+	"github.com/briandowns/spinner"
 	"github.com/common-nighthawk/go-figure"
 	"github.com/spf13/cobra"
 )
@@ -26,12 +28,19 @@ func Commit(cmd *cobra.Command, args []string) {
 		os.Exit(0)
 	}
 
+	s := spinner.New(spinner.CharSets[32], 100*time.Millisecond)
+	s.Start()
+	s.Prefix = "waiting.. "
+	s.HideCursor = true
+
 	// get `stdout` from `_cmd` and pass to chatgpt.GeneratedCommitMessageByChatGPT.
 	out, err := chatgpt.GeneratedCommitMessageByChatGPT(_cmd)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(0)
 	}
+
+	s.Stop()
 
 	commitMessage := out.Choices[len(out.Choices)-1].Message.Content
 
