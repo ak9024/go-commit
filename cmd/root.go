@@ -10,7 +10,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "go-commit",
 	Short: "go-commit is a short of go-commit",
-	Long:  "The CLI to help a human to generate commit with karma style",
+	Long:  "The CLI to generate commit with karma style",
 	Run:   RunCommand,
 }
 

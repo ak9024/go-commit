@@ -17,7 +17,7 @@ func RunCommand(cmd *cobra.Command, args []string) {
 		os.Exit(1)
 	}
 
-	generatedFigure := figure.NewFigure("gocommit", "", true)
+	generatedFigure := figure.NewFigure("go-commit", "", true)
 
 	// get `stdout` from `_cmd` and pass to GeneratedCommitMessageByChatGPT.
 	out, err := chatgpt.GeneratedCommitMessageByChatGPT(_cmd)

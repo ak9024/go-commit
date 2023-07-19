@@ -1,6 +1,7 @@
 <div align="center">
+    <img src="./assets/go-commit.png" />
     <h2>go-commit</h2>
-    <p>The CLI to help a human to generate commit with karma style</p>
+    <p>The CLI to generate commit with karma style</p>
 </div>
 
 ### Prerequisite
