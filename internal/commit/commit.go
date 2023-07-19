@@ -22,9 +22,7 @@ func Commit(cmd *cobra.Command, args []string) {
 
 	if _cmd == "" {
 		generatedFigure.Print()
-		fmt.Println("")
-		fmt.Println("==========================================================================")
-		fmt.Println("Please doing git add <file> first or make sure git init in your repository")
+		utils.Print("Oops", "Please doing git add <file> first or make sure git init in your repository")
 		os.Exit(0)
 	}
 
@@ -38,7 +36,7 @@ func Commit(cmd *cobra.Command, args []string) {
 	commitMessage := out.Choices[len(out.Choices)-1].Message.Content
 
 	generatedFigure.Print()
-	utils.PrintCommit(commitMessage)
+	utils.Print("Please review your commit message", commitMessage)
 
 	// ask a quetion to make sure the commit suitable with the changes
 	commit := utils.StringPrompt("If ok, please confirm to commit [y/n]? ")
@@ -52,7 +50,6 @@ func Commit(cmd *cobra.Command, args []string) {
 		}
 
 		fmt.Println(execCommit)
-		fmt.Println("Success....")
 	} else {
 		os.Exit(0)
 	}
