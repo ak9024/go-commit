@@ -14,6 +14,16 @@
 go install github.com/ak9024/go-commit@latest
 ```
 
+### Setup
+
+```bash
+export OPENAI_API_KEY=<token>
+
+# or open file ~/.zshrc
+# add "export OPENAI_API_KEY=<token>"
+# source ~/.zshrc
+```
+
 ### How to run?
 
 ```bash
