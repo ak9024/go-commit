@@ -52,13 +52,13 @@ func StringPrompt(input string) string {
 	return strings.TrimSpace(s)
 }
 
-func PrintCommit(commit string) {
+func Print(title, description string) {
 	fmt.Println("")
 	fmt.Println("=====================================")
-	fmt.Println("Please review your commit message")
+	fmt.Println(title)
 	fmt.Println("=====================================")
 	fmt.Println("")
-	fmt.Println(commit)
+	fmt.Println(description)
 	fmt.Println("=====================================")
 	fmt.Println("")
 }
