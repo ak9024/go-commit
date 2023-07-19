@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"time"
 )
 
 // execCommand(input string) func to handle command
@@ -53,12 +54,14 @@ func StringPrompt(input string) string {
 }
 
 func Print(title, description string) {
-	fmt.Println("")
-	fmt.Println("=====================================")
-	fmt.Println(title)
-	fmt.Println("=====================================")
-	fmt.Println("")
+	fmt.Println()
+	fmt.Println()
+	fmt.Println(fmt.Sprintf("[Time] %s", time.TimeOnly))
+	fmt.Println(fmt.Sprintf("[Info] %s", title))
+	fmt.Println()
+	fmt.Println("[Output]")
+	fmt.Println("---------------------------------------------------------------------------")
 	fmt.Println(description)
-	fmt.Println("=====================================")
-	fmt.Println("")
+	fmt.Println("---------------------------------------------------------------------------")
+	fmt.Println()
 }

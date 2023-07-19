@@ -48,7 +48,7 @@ func Commit(cmd *cobra.Command, args []string) {
 	utils.Print("Please review your commit message", commitMessage)
 
 	// ask a quetion to make sure the commit suitable with the changes
-	commit := utils.StringPrompt("If ok, please confirm to commit [y/n]? ")
+	commit := utils.StringPrompt("[Ask] If ok, please confirm to commit [y/n]? ")
 
 	if commit != "" && strings.EqualFold(commit, "y") {
 		gitCommit := fmt.Sprintf(`git commit -m "%s"`, commitMessage)
