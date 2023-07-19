@@ -1,4 +1,5 @@
 <div align="center">
+    <img src="./assets/terminal.png" />
     <h2>go-commit</h2>
     <p>The CLI to generate commit with karma style</p>
 </div>
@@ -31,10 +32,3 @@ cd <your-repo>
 git add .
 go-commit
 ```
-
-### Screenshoot
-
-<div align="center">
-    <img src="./assets/terminal.png" />
-    <img src="./assets/preview-in-pr.png" />
-</div>
