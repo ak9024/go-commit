@@ -1,5 +1,4 @@
 <div align="center">
-    <img src="./assets/terminal.png" />
     <h2>go-commit</h2>
     <p>The CLI to generate commit with karma style</p>
 </div>
