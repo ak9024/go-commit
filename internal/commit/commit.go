@@ -28,9 +28,10 @@ func Commit(cmd *cobra.Command, args []string) {
 		os.Exit(0)
 	}
 
-	s := spinner.New(spinner.CharSets[9], 100*time.Millisecond)
+	s := spinner.New(spinner.CharSets[32], 100*time.Millisecond)
 	s.Start()
 	s.Prefix = "waiting.. "
+	s.HideCursor = true
 
 	// get `stdout` from `_cmd` and pass to chatgpt.GeneratedCommitMessageByChatGPT.
 	out, err := chatgpt.GeneratedCommitMessageByChatGPT(_cmd)
