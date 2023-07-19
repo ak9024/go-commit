@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/ak9024/go-commit/internal/commit"
 	"github.com/spf13/cobra"
 )
 
@@ -11,7 +12,7 @@ var rootCmd = &cobra.Command{
 	Use:   "go-commit",
 	Short: "go-commit is a short of go-commit",
 	Long:  "The CLI to generate commit with karma style",
-	Run:   RunCommand,
+	Run:   commit.Commit,
 }
 
 func Execute() {
