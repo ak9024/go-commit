@@ -1,13 +1,12 @@
 <div align="center">
-    <img src="./assets/go-commit.png" />
     <h2>go-commit</h2>
     <p>The CLI to generate commit with karma style</p>
 </div>
 
 ### Prerequisite
 
-- Go
-- OpenAI Token
+- [Go](https://go.dev/doc/install)
+- [OpenAI Key](https://platform.openai.com/account/api-keys)
 
 ### Install
 
