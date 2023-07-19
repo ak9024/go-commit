@@ -11,7 +11,7 @@ import (
 
 // execCommand(input string) func to handle command
 func ExecCommand(input string) (string, error) {
-	bash := "/bin/bash"
+	bash := "bash"
 	// execute the command with shell scripting
 	_cmd := exec.Command(bash, "-c", input)
 
