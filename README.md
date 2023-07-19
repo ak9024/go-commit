@@ -1,8 +1,6 @@
 <div align="center">
-    <img src="./assets/terminal.png" />
-    <img src="./assets/preview-in-pr.png" />
     <h2>go-commit</h2>
-    <p>The CLI to help a human generating commit help by AI</p>
+    <p>The CLI to help a human to generate commit with karma style</p>
 </div>
 
 ### Prerequisite
@@ -19,5 +17,14 @@ go install github.com/ak9024/go-commit@latest
 ### How to run?
 
 ```bash
+cd <your-repo>
+git add .
 go-commit
 ```
+
+### Screenshoot
+
+<div align="center">
+    <img src="./assets/terminal.png" />
+    <img src="./assets/preview-in-pr.png" />
+</div>

@@ -8,9 +8,9 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "gc",
-	Short: "gc is a short of go-commit",
-	Long:  "The CLI to help you create a commit message help by chatgpt",
+	Use:   "go-commit",
+	Short: "go-commit is a short of go-commit",
+	Long:  "The CLI to help a human to generate commit with karma style",
 	Run:   RunCommand,
 }
 
