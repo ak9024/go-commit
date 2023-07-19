@@ -30,5 +30,8 @@ export OPENAI_API_KEY=<token>
 ```bash
 cd <your-repo>
 git add .
-go-commit
+go-commit commit
+
+# for help
+go-commit -h
 ```
