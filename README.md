@@ -1,5 +1,4 @@
 <div align="center">
-    <img src="./assets/terminal.png" />
     <h2>go-commit</h2>
     <p>The CLI to generate commit with karma style</p>
 </div>
@@ -30,5 +29,8 @@ export OPENAI_API_KEY=<token>
 ```bash
 cd <your-repo>
 git add .
-go-commit
+go-commit commit
+
+# for help
+go-commit -h
 ```
