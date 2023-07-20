@@ -1,4 +1,5 @@
 <div align="center">
+    <img src="./assets/go-commit.png"/>
     <h2>go-commit</h2>
     <p>The CLI (Command Line Interface) to help you generated commit automatically, using karma style for git convention</p>
 </div>
