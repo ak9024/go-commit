@@ -26,7 +26,7 @@ func GeneratedCommitMessageByChatGPT(c string) (*sdk.ModelChatResponse, error) {
 	// @TODO
 	// next time need to add more config like chatgpt model
 	resp, err := _sdk.ChatCompletions(sdk.ModelChat{
-		Model: "gpt-3.5-turbo",
+		Model: "gpt-3.5-turbo-16k",
 		Messages: []sdk.Message{
 			{
 				Role:    "system",
