@@ -1,13 +1,13 @@
 <div align="center">
     <img src="./assets/go-commit.png"/>
     <h2>go-commit</h2>
-    <p>The CLI (Command Line Interface) to help you generated commit automatically, using karma style for git convention</p>
+    <p>The CLI (Command Line Interface) helps you generate commits automatically, using karma style for git convention.</p>
 </div>
 
 ### Prerequisite
 
-- [Go](https://go.dev/doc/install)
-- [OpenAI Key](https://platform.openai.com/account/api-keys)
+- [Install Go](https://go.dev/doc/install)
+- [OPENAI_API_KEY](https://platform.openai.com/account/api-keys)
 
 ### Install
 
@@ -16,6 +16,8 @@ go install github.com/ak9024/go-commit@latest
 ```
 
 ## Install via CURL
+
+> If you don't installed go binary, please follow this instruction to install with CURL.
 
 ```bash
 # download install.sh from repo go-commit
@@ -30,8 +32,6 @@ chmod +x ./install.sh
 ./install.sh
 # move go commit into your local binary
 sudo mv go-commit /usr/local/bin/
-# run the binary
-go-commit
 ```
 
 ### Setup
@@ -45,6 +45,8 @@ export OPENAI_API_KEY=<token>
 ```
 
 ### How to run?
+
+> Please setup `OPENAI_API_KEY` before usage go-commit
 
 ```bash
 cd <your-repo>
