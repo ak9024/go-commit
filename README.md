@@ -17,8 +17,18 @@ go install github.com/ak9024/go-commit@latest
 ## Install via CURL
 
 ```bash
+# download install.sh from repo go-commit
+curl -O https://raw.githubusercontent.com/ak9024/go-commit/main/install.sh
+# please ope ./install.sh with your editor and suitable with your config
+nvim ./install.sh
+# open write access
 chmod +x ./install.sh
+# execute install.sh
 ./install.sh
+# move go commit into your local binary
+sudo mv go-commit /usr/local/bin/
+# run the binary
+go-commit
 ```
 
 ### Setup
