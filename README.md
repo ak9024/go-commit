@@ -1,6 +1,6 @@
 <div align="center">
     <h2>go-commit</h2>
-    <p>The CLI to generate commit with karma style</p>
+    <p>The CLI (Command Line Interface) to help you generated commit automaticly, using karma style for git convention</p>
 </div>
 
 ### Prerequisite
@@ -20,7 +20,7 @@ go install github.com/ak9024/go-commit@latest
 export OPENAI_API_KEY=<token>
 
 # or open file ~/.zshrc
-# add "export OPENAI_API_KEY=<token>"
+# add "export OPENAI_API_KEY=<OpenAI Key>"
 # source ~/.zshrc
 ```
 

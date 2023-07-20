@@ -7,6 +7,6 @@ import (
 
 var commitCmd = &cobra.Command{
 	Use:   "commit",
-	Short: "Generated automate commit provide by chatgpt",
+	Short: "commit <your_repository>",
 	Run:   commit.Commit,
 }
