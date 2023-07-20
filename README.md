@@ -14,6 +14,13 @@
 go install github.com/ak9024/go-commit@latest
 ```
 
+## Install via CURL
+
+```bash
+chmod +x ./install.sh
+./install.sh
+```
+
 ### Setup
 
 ```bash
