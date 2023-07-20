@@ -16,12 +16,15 @@ func GeneratedCommitMessageByChatGPT(c string) (*sdk.ModelChatResponse, error) {
 
 	generatedFigure := figure.NewFigure("go-commit", "", true)
 
+	// if OpenAIKey not, print the error message and close the process
 	if OpenAIKey == "" {
 		generatedFigure.Print()
-		utils.Print("Oops", "Please setup OPENAI_API_KEY in your environment")
+		utils.Print("OPENAI_API_KEY not found!", "Please setup OPENAI_API_KEY in your environment")
 		os.Exit(0)
 	}
 
+	// @TODO
+	// next time need to add more config like chatgpt model
 	resp, err := _sdk.ChatCompletions(sdk.ModelChat{
 		Model: "gpt-3.5-turbo",
 		Messages: []sdk.Message{
