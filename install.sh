@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="v0.1.1-alpha.1"
+VERSION=""
 ARCH=$(uname -m)
 OS="Linux"
 FILENAME="go-commit_${OS}_${ARCH}.tar.gz"
@@ -11,6 +11,10 @@ download() {
 
 uncompressing() {
     tar -zxvf $FILENAME
+}
+
+remove_filezip() {
+    rm -rf $FILENAME
 }
 
 install() {
