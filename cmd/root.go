@@ -9,8 +9,8 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "go-commit",
-	Short: "The CLI (Command Line Interface) to help you generated commit automatically",
-	Long:  "The CLI (Command Line Interface) to help you generated commit automatically, using karma style for git convention",
+	Short: "The CLI (Command Line Interface) helps you generate commits automatically",
+	Long:  "The CLI (Command Line Interface) helps you generate commits automatically, using karma style for git convention",
 }
 
 func Execute() {
