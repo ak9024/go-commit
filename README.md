@@ -1,6 +1,6 @@
 <div align="center">
     <h2>go-commit</h2>
-    <p>The CLI (Command Line Interface) to help you generated commit automaticly, using karma style for git convention</p>
+    <p>The CLI (Command Line Interface) to help you generated commit automatically, using karma style for git convention</p>
 </div>
 
 ### Prerequisite
