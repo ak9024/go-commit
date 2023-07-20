@@ -20,6 +20,7 @@ remove_filezip() {
 install() {
     download
     uncompressing
+    remove_filezip
 }
 
 install
