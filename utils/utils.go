@@ -35,9 +35,9 @@ func ExecCommand(input string) (string, error) {
 	// return `stderr.String()`
 	if stderr.String() != "" {
 		return stderr.String(), nil
-	} else {
-		return stdout.String(), nil
 	}
+
+	return stdout.String(), nil
 }
 
 // stringPrompt(input string) to handle prompt in terminal
