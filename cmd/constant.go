@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	cliVersion = "v0.1.2"
+	cliVersion = "v0.2.0"
 	shortText  = "The CLI (Command Line Interface) helps you generate commits automatically"
 	longText   = "The CLI (Command Line Interface) helps you generate commits automatically, using karma style for git convention"
 	Long       = fmt.Sprintf(`
