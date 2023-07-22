@@ -8,6 +8,8 @@ import (
 	"os/exec"
 	"strings"
 	"time"
+
+	"github.com/common-nighthawk/go-figure"
 )
 
 // execCommand(input string) func to handle command
@@ -33,9 +35,9 @@ func ExecCommand(input string) (string, error) {
 	// return `stderr.String()`
 	if stderr.String() != "" {
 		return stderr.String(), nil
-	} else {
-		return stdout.String(), nil
 	}
+
+	return stdout.String(), nil
 }
 
 // stringPrompt(input string) to handle prompt in terminal
@@ -53,6 +55,11 @@ func StringPrompt(input string) string {
 	return strings.TrimSpace(s)
 }
 
+func PrintLogo() string {
+	f := figure.NewFigure("go-commit", "", true)
+	return f.String()
+}
+
 func Print(title, description string) {
 	fmt.Println()
 	fmt.Println()
@@ -60,8 +67,8 @@ func Print(title, description string) {
 	fmt.Println(fmt.Sprintf("[Info] %s", title))
 	fmt.Println()
 	fmt.Println("[Output]")
-	fmt.Println("---------------------------------------------------------------------------")
+	fmt.Println()
 	fmt.Println(description)
-	fmt.Println("---------------------------------------------------------------------------")
+	fmt.Println()
 	fmt.Println()
 }

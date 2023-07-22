@@ -2,6 +2,7 @@ package commit
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"strings"
 	"time"
@@ -9,7 +10,6 @@ import (
 	"github.com/ak9024/go-commit/pkg/chatgpt"
 	"github.com/ak9024/go-commit/utils"
 	"github.com/briandowns/spinner"
-	"github.com/common-nighthawk/go-figure"
 	"github.com/spf13/cobra"
 )
 
@@ -17,15 +17,15 @@ func Commit(cmd *cobra.Command, args []string) {
 	_cmd, err := utils.ExecCommand("git diff --staged")
 	if err != nil {
 		fmt.Println(err)
-		os.Exit(0)
+
+		return
 	}
 
-	generatedFigure := figure.NewFigure("go-commit", "", true)
-
 	if _cmd == "" {
-		generatedFigure.Print()
-		utils.Print("Invalid", "Can't be execute git diff --staged")
-		os.Exit(0)
+		fmt.Println(utils.PrintLogo())
+		utils.Print("Invalid", "Can't be execute git diff --staged, please execute git add before commit")
+
+		return
 	}
 
 	// add spinner to handle buffering while async process
@@ -37,7 +37,8 @@ func Commit(cmd *cobra.Command, args []string) {
 	out, err := chatgpt.GeneratedCommitMessageByChatGPT(_cmd)
 	if err != nil {
 		fmt.Println(err)
-		os.Exit(0)
+
+		return
 	}
 
 	// stop the spinner if the data return
@@ -47,7 +48,7 @@ func Commit(cmd *cobra.Command, args []string) {
 	commitMessage := out.Choices[len(out.Choices)-1].Message.Content
 
 	// present the result, before commit happened
-	generatedFigure.Print()
+	fmt.Println(utils.PrintLogo())
 	utils.Print("Please review your commit message:", commitMessage)
 
 	// ask a quetion to confirm, before commit execute
@@ -59,11 +60,10 @@ func Commit(cmd *cobra.Command, args []string) {
 		gitCommit := fmt.Sprintf(`git commit -m "%s"`, commitMessage)
 		// exec the command for commit
 		execCommit, _ := utils.ExecCommand(gitCommit)
-		// present the result
-		fmt.Println(execCommit)
-	} else {
-		// close all the process if user ignore to commit
-		os.Exit(0)
+		log.Println(execCommit)
+		return
 	}
 
+	// close all the process if user ignore to commit
+	os.Exit(0)
 }
