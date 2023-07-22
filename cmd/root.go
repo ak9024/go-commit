@@ -8,17 +8,16 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "go-commit",
-	Short: "The CLI (Command Line Interface) helps you generate commits automatically",
-	Long:  "The CLI (Command Line Interface) helps you generate commits automatically, using karma style for git convention",
+	Use:     "go-commit",
+	Version: cliVersion,
+	Short:   shortText,
+	Long:    Long,
 }
 
 func Execute() {
 	rootCmd.AddCommand(commitCmd)
-
 	// to enable suggestions
 	rootCmd.SuggestionsMinimumDistance = 1
-
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(0)
