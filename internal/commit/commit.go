@@ -59,8 +59,10 @@ func Commit(cmd *cobra.Command, args []string) {
 		gitCommit := fmt.Sprintf(`git commit -m "%s"`, commitMessage)
 		// exec the command for commit
 		execCommit, _ := utils.ExecCommand(gitCommit)
-		// present the result
-		fmt.Println(execCommit)
+
+		if execCommit != "" {
+			fmt.Println("success to commit.., please check with go log")
+		}
 
 		return
 	}
