@@ -2,6 +2,7 @@ package commit
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"strings"
 	"time"
@@ -59,11 +60,7 @@ func Commit(cmd *cobra.Command, args []string) {
 		gitCommit := fmt.Sprintf(`git commit -m "%s"`, commitMessage)
 		// exec the command for commit
 		execCommit, _ := utils.ExecCommand(gitCommit)
-
-		if execCommit != "" {
-			fmt.Println("success to commit.., please check with go log")
-		}
-
+		log.Println(execCommit)
 		return
 	}
 
