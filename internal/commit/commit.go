@@ -10,7 +10,6 @@ import (
 	"github.com/ak9024/go-commit/utils"
 	"github.com/briandowns/spinner"
 	"github.com/go-git/go-git/v5"
-	"github.com/go-git/go-git/v5/plumbing/object"
 	"github.com/spf13/cobra"
 )
 
@@ -69,11 +68,8 @@ func Commit(cmd *cobra.Command, args []string) {
 		if err != nil {
 			fmt.Println(err)
 		}
-		commit, err := w.Commit(commitMessage, &git.CommitOptions{
-			Author: &object.Signature{
-				When: time.Now(),
-			},
-		})
+
+		commit, err := w.Commit(commitMessage, &git.CommitOptions{})
 		//log.Println(execCommit)
 		if err != nil {
 			fmt.Println(err)
