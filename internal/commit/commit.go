@@ -2,7 +2,6 @@ package commit
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"strings"
 	"time"
@@ -10,6 +9,7 @@ import (
 	"github.com/ak9024/go-commit/pkg/chatgpt"
 	"github.com/ak9024/go-commit/utils"
 	"github.com/briandowns/spinner"
+	"github.com/go-git/go-git/v5"
 	"github.com/spf13/cobra"
 )
 
@@ -57,10 +57,13 @@ func Commit(cmd *cobra.Command, args []string) {
 	// validate just process commit, if user aggre for the next action (commit)
 	if confirmCommit != "" && strings.EqualFold(confirmCommit, "y") {
 		// compose the command for commit
-		gitCommit := fmt.Sprintf(`git commit -m "%s"`, commitMessage)
+		//gitCommit := fmt.Sprintf(`git commit -m "%s"`, commitMessage)
 		// exec the command for commit
-		execCommit, _ := utils.ExecCommand(gitCommit)
-		log.Println(execCommit)
+		//execCommit, _ := utils.ExecCommand(gitCommit)
+		r, _ := git.PlainOpen(".")
+		w, _ := r.Worktree()
+		w.Commit("go git commit", &git.CommitOptions{})
+		//log.Println(execCommit)
 		return
 	}
 
