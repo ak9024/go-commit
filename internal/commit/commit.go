@@ -9,7 +9,6 @@ import (
 	"github.com/ak9024/go-commit/pkg/chatgpt"
 	"github.com/ak9024/go-commit/utils"
 	"github.com/briandowns/spinner"
-	"github.com/go-git/go-git/v5"
 	"github.com/spf13/cobra"
 )
 
@@ -57,30 +56,10 @@ func Commit(cmd *cobra.Command, args []string) {
 	// validate just process commit, if user aggre for the next action (commit)
 	if confirmCommit != "" && strings.EqualFold(confirmCommit, "y") {
 		// compose the command for commit
-		//gitCommit := fmt.Sprintf(`git commit -m "%s"`, commitMessage)
+		gitCommit := fmt.Sprintf(`"%s"`, commitMessage)
 		// exec the command for commit
-		//execCommit, _ := utils.ExecCommand(gitCommit)
-		r, err := git.PlainOpen(".")
-		if err != nil {
-			fmt.Println(err)
-		}
-		w, err := r.Worktree()
-		if err != nil {
-			fmt.Println(err)
-		}
-
-		commit, err := w.Commit(commitMessage, &git.CommitOptions{})
-		//log.Println(execCommit)
-		if err != nil {
-			fmt.Println(err)
-		}
-
-		obj, err := r.CommitObject(commit)
-		if err != nil {
-			fmt.Println(err)
-		}
-
-		fmt.Println(obj)
+		execCommit, _ := utils.ExecCommand(fmt.Sprintf("git commit -m %s", gitCommit))
+		fmt.Print(execCommit)
 		return
 	}
 
