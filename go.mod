@@ -1,6 +1,6 @@
 module github.com/ak9024/go-commit
 
-go 1.20
+go 1.21.4
 
 require (
 	github.com/ak9024/go-chatgpt-sdk v0.0.0-20230718123122-e382de2491ed
