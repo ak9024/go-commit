@@ -63,8 +63,8 @@ func PrintLogo() string {
 func Print(title, description string) {
 	fmt.Println()
 	fmt.Println()
-	fmt.Println(fmt.Sprintf("[Time] %s", time.TimeOnly))
-	fmt.Println(fmt.Sprintf("[Info] %s", title))
+	fmt.Printf("[Time] %s", time.TimeOnly)
+	fmt.Printf("[Info] %s", title)
 	fmt.Println()
 	fmt.Println("[Output]")
 	fmt.Println()
