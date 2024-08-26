@@ -1,6 +1,7 @@
 ![GitHub License](https://img.shields.io/github/license/ak9024/go-commit)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ak9024/go-commit/.github%2Fworkflows%2Fgo.yml)
 ![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/ak9024/go-commit/latest/total)
+![GitHub top language](https://img.shields.io/github/languages/top/ak9024/go-commit)
 
 # go-commit
 
